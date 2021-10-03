@@ -8,6 +8,17 @@
     "lint": "eslint **/*.js",
     "lint:fix": "prettier-eslint **/*.js --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eddydeniro/inditable.git"
@@ -19,7 +30,7 @@
     "jquery",
     "javascript"
   ],
-  "author": "",
+  "author": "Edi Supriyadi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/eddydeniro/inditable/issues"
@@ -31,6 +42,8 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "prettier-eslint-cli": "^5.0.1"
   }
 }
